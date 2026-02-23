@@ -6,83 +6,309 @@
   <title>Séance Arielle – Bas du corps</title>
   <style>
     :root{
-      --bg:#fff0f6;
+      /* Modern neutrals + soft accent */
+      --bg:#f7f7fb;
       --card:#ffffff;
-      --card2:#ffe3ec;
-      --text:#4a154b;
-      --muted:#a05a8c;
-      --accent:#ec4899;      /* rose */
-      --accent2:#f472b6;     /* rose clair */
-      --danger:#be185d;
-      --border:rgba(236,72,153,.25);
-      --shadow:0 10px 30px rgba(236,72,153,.15);
-      --radius:16px; --pad:18px;
+      --card2:#fbfbff;
+      --text:#0f172a;        /* slate-900 */
+      --muted:#64748b;       /* slate-500 */
+      --border:rgba(15, 23, 42, .10);
+      --shadow:0 10px 26px rgba(15, 23, 42, .08);
+
+      --accent:#7c3aed;      /* violet */
+      --accent2:#ec4899;     /* pink */
+      --accentSoft:rgba(124,58,237,.12);
+      --danger:#ef4444;
+
+      --radius:18px;
+      --pad:18px;
+
       --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--sans); color:var(--text); line-height:1.35;
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      line-height:1.45;
       background:
-        radial-gradient(1000px 500px at 10% -20%, rgba(236,72,153,.35), transparent 55%),
-        radial-gradient(800px 400px at 90% 0%, rgba(244,114,182,.25), transparent 55%),
+        radial-gradient(900px 450px at 15% -10%, rgba(124,58,237,.14), transparent 55%),
+        radial-gradient(700px 380px at 90% 0%, rgba(236,72,153,.10), transparent 55%),
         var(--bg);
     }
-    header{padding:32px 18px 10px; max-width:980px; margin:0 auto;}
-    h1{margin:0 0 8px; font-size:clamp(22px,3.5vw,34px); letter-spacing:.2px;}
-    .subtitle{margin:0; color:var(--muted); max-width:80ch;}
-    main{max-width:980px; margin:0 auto; padding:18px; display:grid; grid-template-columns:1.4fr .9fr; gap:16px;}
-    @media (max-width:880px){main{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 55%), var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:var(--pad);}
-    .card h2{margin:0 0 12px; font-size:18px; display:flex; align-items:center; gap:10px;}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--muted); font-size:12px; margin-left:auto; white-space:nowrap;}
-    .section{background:rgba(0,0,0,.18); border:1px solid var(--border); border-radius:14px; padding:14px; margin:12px 0;}
-    .section-title{display:flex; align-items:center; gap:10px; margin:0 0 10px; font-weight:700;}
-    .badge{font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(236,72,153,.15); border:1px solid rgba(236,72,153,.35); color:var(--accent);}
-    .list{margin:0; padding:0; list-style:none; display:grid; gap:10px;}
-    .exo{display:flex; gap:10px; padding:12px; border-radius:12px; border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.03), transparent), var(--card2); align-items:flex-start;}
-    .exo input{margin-top:6px; transform:scale(1.1)}
-    .exo .name{font-weight:700; margin:0 0 3px}
-    .exo .meta{color:var(--muted); font-size:13px; margin:0}
-    .exo .meta code{font-family:var(--mono); font-size:12px; padding:2px 6px; border-radius:8px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text);}
-    .exo .link{
-      display:inline-flex; align-items:center; gap:6px;
-      margin-top:8px; font-size:13px; font-weight:700;
-      color:var(--accent); text-decoration:none;
-      padding:6px 10px; border-radius:999px;
-      border:1px solid rgba(236,72,153,.35);
-      background:rgba(236,72,153,.10);
-      width:max-content;
+
+    header{
+      padding:34px 18px 10px;
+      max-width:1020px;
+      margin:0 auto;
     }
-    .exo .link:hover{background:rgba(236,72,153,.16)}
-    .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
-    button{appearance:none; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); border-radius:12px; padding:10px 12px; font-weight:700; cursor:pointer; transition:transform .06s ease, background .15s ease;}
-    button:hover{background:rgba(255,255,255,.07)}
+
+    .hero{
+      background:linear-gradient(135deg, rgba(124,58,237,.10), rgba(236,72,153,.06));
+      border:1px solid rgba(124,58,237,.14);
+      border-radius:22px;
+      padding:18px 18px;
+      box-shadow:0 14px 34px rgba(15, 23, 42, .08);
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size:clamp(22px,3.2vw,34px);
+      letter-spacing:-.02em;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      max-width:88ch;
+      font-size:14px;
+    }
+
+    main{
+      max-width:1020px;
+      margin:0 auto;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1.45fr .85fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width:920px){
+      main{grid-template-columns:1fr}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--pad);
+    }
+
+    .card h2{
+      margin:0 0 12px;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      letter-spacing:-.01em;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      color:var(--muted);
+      font-size:12px;
+      margin-left:auto;
+      white-space:nowrap;
+    }
+
+    .section{
+      background:linear-gradient(180deg, rgba(124,58,237,.05), transparent 55%);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      margin:12px 0;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 10px;
+      font-weight:800;
+    }
+
+    .badge{
+      font-size:11px;
+      padding:5px 9px;
+      border-radius:999px;
+      background:var(--accentSoft);
+      border:1px solid rgba(124,58,237,.22);
+      color:var(--accent);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .exo{
+      display:flex;
+      gap:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(15, 23, 42, .02), transparent), var(--card2);
+      align-items:flex-start;
+    }
+
+    .exo input{
+      margin-top:6px;
+      transform:scale(1.1);
+      accent-color:var(--accent);
+    }
+
+    .exo .name{
+      font-weight:800;
+      margin:0 0 4px;
+      letter-spacing:-.01em;
+    }
+
+    .exo .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+    }
+
+    .exo .meta code{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:2px 7px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      color:var(--text);
+    }
+
+    .exo .link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:9px;
+      font-size:13px;
+      font-weight:800;
+      color:var(--accent);
+      text-decoration:none;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(124,58,237,.22);
+      background:rgba(124,58,237,.08);
+      width:max-content;
+      transition:transform .06s ease, background .15s ease;
+    }
+    .exo .link:hover{background:rgba(124,58,237,.12)}
+    .exo .link:active{transform:translateY(1px)}
+
+    .row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    button{
+      appearance:none;
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      color:var(--text);
+      border-radius:14px;
+      padding:10px 12px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .06s ease, background .15s ease, border-color .15s ease;
+    }
+    button:hover{background:rgba(15, 23, 42, .05)}
     button:active{transform:translateY(1px)}
-    .btn-accent{border-color:rgba(236,72,153,.45); background:rgba(236,72,153,.15); color:var(--accent);}
-    .btn-accent:hover{background:rgba(236,72,153,.22)}
-    .btn-green{border-color:rgba(244,114,182,.45); background:rgba(244,114,182,.18); color:#831843;}
-    .btn-green:hover{background:rgba(34,197,94,.2)}
-    .btn-danger{border-color:rgba(239,68,68,.45); background:rgba(239,68,68,.12)}
-    .btn-danger:hover{background:rgba(239,68,68,.18)}
-    .timer{display:grid; gap:10px; margin-top:10px;}
-    .timer-display{font-family:var(--mono); font-size:34px; letter-spacing:1px; padding:14px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,.03); text-align:center;}
-    .small{color:var(--muted); font-size:13px; margin:0}
-    .progress{height:10px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.03); overflow:hidden;}
-    .bar{height:100%; width:0%; background:linear-gradient(90deg, #ec4899, #f472b6);}
-    footer{max-width:980px; margin:0 auto; padding:10px 18px 24px; color:var(--muted); font-size:12px;}
-    .kbd{font-family:var(--mono); border:1px solid var(--border); background:rgba(255,255,255,.03); padding:2px 6px; border-radius:8px;}
+
+    .btn-accent{
+      border-color:rgba(124,58,237,.28);
+      background:rgba(124,58,237,.10);
+      color:var(--accent);
+    }
+    .btn-accent:hover{background:rgba(124,58,237,.14)}
+
+    .btn-green{
+      border-color:rgba(34,197,94,.25);
+      background:rgba(34,197,94,.10);
+      color:#166534;
+    }
+    .btn-green:hover{background:rgba(34,197,94,.14)}
+
+    .btn-danger{
+      border-color:rgba(239,68,68,.25);
+      background:rgba(239,68,68,.08);
+      color:#991b1b;
+    }
+    .btn-danger:hover{background:rgba(239,68,68,.12)}
+
+    .timer{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .timer-display{
+      font-family:var(--mono);
+      font-size:34px;
+      letter-spacing:1px;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      text-align:center;
+    }
+
+    .small{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+    }
+
+    .progress{
+      height:10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      overflow:hidden;
+    }
+
+    .bar{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    footer{
+      max-width:1020px;
+      margin:0 auto;
+      padding:10px 18px 26px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .kbd{
+      font-family:var(--mono);
+      border:1px solid var(--border);
+      background:rgba(15, 23, 42, .03);
+      padding:2px 6px;
+      border-radius:10px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Séance Arielle – Bas du corps</h1>
-    <p class="subtitle">
-      On commence par <b>10 min de vélo</b> • Ensuite bas du corps (fessiers + jambes) • + 2 exos triceps <b>sans haltère ni barre</b> • On finit par <b>45 min à 1h de marche inclinée</b>.<br><br>
-      <b>Progression charges :</b> sur les exos en <code>4 séries</code>, reste “propre” sur séries 1–2.
-      <b>À partir de la série 3</b>, monte la charge progressivement pour que <b>la dernière série</b> soit à <b>8 reps</b> (tu ne dois pas pouvoir faire plus).
-      Si la dernière est <b>&lt; 8</b> → trop lourd. Si elle est <b>&gt; 10</b> → trop léger.
-    </p>
+    <div class="hero">
+      <h1>Séance Arielle – Bas du corps</h1>
+      <p class="subtitle">
+        On commence par <b>10 min de vélo</b> • Ensuite bas du corps (fessiers + jambes) • + 2 exos triceps <b>sans haltère ni barre</b> • On finit par <b>45 min à 1h de marche inclinée</b>.<br><br>
+        <b>Progression charges :</b> sur les exos en <code>4 séries</code>, reste “propre” sur séries 1–2.
+        <b>À partir de la série 3</b>, monte la charge progressivement pour que <b>la dernière série</b> soit à <b>8 reps</b> (tu ne dois pas pouvoir faire plus).
+        Si la dernière est <b>&lt; 8</b> → trop lourd. Si elle est <b>&gt; 10</b> → trop léger.
+      </p>
+    </div>
   </header>
 
   <main>
@@ -90,7 +316,7 @@
       <h2>Séance <span class="pill" id="donePill">0 / 0 cochés</span></h2>
 
       <div class="section">
-        <div class="section-title"><span class="badge">WARM-UP</span><span style="color:var(--muted); font-size:13px;">On démarre tranquille</span></div>
+        <div class="section-title"><span class="badge">Warm-up</span><span style="color:var(--muted); font-size:13px;">On démarre tranquille</span></div>
         <ul class="list">
           <li class="exo">
             <input type="checkbox" class="chk" />
@@ -103,23 +329,23 @@
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">BAS DU CORPS</span><span style="color:var(--muted); font-size:13px;">4 exercices (focus fessiers + jambes)</span></div>
+        <div class="section-title"><span class="badge">Bas du corps</span><span style="color:var(--muted); font-size:13px;">4 exercices (focus fessiers + jambes)</span></div>
         <ul class="list">
           <li class="exo">
             <input type="checkbox" class="chk" />
             <div>
               <p class="name">Fentes bulgares (un pied sur banc)</p>
               <p class="meta"><code>4 × 10</code> • Repos 60–90s • Buste gainé, descente contrôlée, pousse via le talon de la jambe avant.</p>
-              <a class="link" href="https://musclewiki.com/exercise/bulgarian-split-squat" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/bulgarian-split-squat?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
 
           <li class="exo">
             <input type="checkbox" class="chk" />
             <div>
-              <p class="name">Squat avec une haltère à deux mains (type goblet) — focus fesses</p>
+              <p class="name">Squat avec une haltère à deux mains (goblet) — focus fesses</p>
               <p class="meta"><code>4 × 10</code> • Repos 60–90s • Descends en gardant le dos neutre, pense “hanches vers l’arrière”, remonte en serrant les fessiers.</p>
-              <a class="link" href="https://musclewiki.com/exercise/dumbbell-goblet-squat" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/dumbbell-goblet-squat?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
 
@@ -128,7 +354,7 @@
             <div>
               <p class="name">Hip thrust</p>
               <p class="meta"><code>4 × 10</code> • Repos 90s • Pause 1s en haut, menton rentré, bassin en rétroversion (pas de cambrure).</p>
-              <a class="link" href="https://musclewiki.com/exercise/barbell-hip-thrust" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/barbell-hip-thrust?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
 
@@ -137,21 +363,21 @@
             <div>
               <p class="name">Curl jambes (machine)</p>
               <p class="meta"><code>4 × 10</code> • Repos 60–90s • Contrôle total, surtout en descente. Pas d’à-coups.</p>
-              <a class="link" href="https://musclewiki.com/exercise/seated-leg-curl" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/seated-leg-curl?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
         </ul>
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">TRICEPS</span><span style="color:var(--muted); font-size:13px;">2 exercices sans haltère ni barre</span></div>
+        <div class="section-title"><span class="badge">Triceps</span><span style="color:var(--muted); font-size:13px;">2 exercices sans haltère ni barre</span></div>
         <ul class="list">
           <li class="exo">
             <input type="checkbox" class="chk" />
             <div>
               <p class="name">Dips sur banc (bench dips)</p>
               <p class="meta"><code>3 × 10–15</code> • Repos 60s • Épaules basses, coudes vers l’arrière, amplitude contrôlée.</p>
-              <a class="link" href="https://musclewiki.com/exercise/bench-dips" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/bench-dips?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
 
@@ -160,14 +386,14 @@
             <div>
               <p class="name">Pompes diamant (diamond push-ups)</p>
               <p class="meta"><code>3 × 8–12</code> • Repos 60s • Coudes proches du corps, gainage fort. (Sur genoux si trop dur.)</p>
-              <a class="link" href="https://musclewiki.com/exercise/diamond-push-ups" target="_blank" rel="noopener">Voir l’image</a>
+              <a class="link" href="https://musclewiki.com/fr-fr/exercise/diamond-push-ups?model=f" target="_blank" rel="noopener">Voir l’image</a>
             </div>
           </li>
         </ul>
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">CARDIO</span><span style="color:var(--muted); font-size:13px;">Finisher</span></div>
+        <div class="section-title"><span class="badge">Cardio</span><span style="color:var(--muted); font-size:13px;">Finisher</span></div>
         <ul class="list">
           <li class="exo">
             <input type="checkbox" class="chk" />
@@ -206,7 +432,7 @@
     </aside>
   </main>
 
-  <footer>Version simple & efficace. Astuce clavier: <span class="kbd">R</span> = reset.</footer>
+  <footer>Astuce clavier: <span class="kbd">R</span> = reset.</footer>
 
   <script>
     const chks = Array.from(document.querySelectorAll('.chk'));
