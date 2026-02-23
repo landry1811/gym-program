@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Séance Arielle – Haut du corps</title>
+  <title>Séance Arielle – Bas du corps</title>
   <style>
     :root{
       --bg:#fff0f6;
@@ -30,7 +30,7 @@
     }
     header{padding:32px 18px 10px; max-width:980px; margin:0 auto;}
     h1{margin:0 0 8px; font-size:clamp(22px,3.5vw,34px); letter-spacing:.2px;}
-    .subtitle{margin:0; color:var(--muted); max-width:70ch;}
+    .subtitle{margin:0; color:var(--muted); max-width:80ch;}
     main{max-width:980px; margin:0 auto; padding:18px; display:grid; grid-template-columns:1.4fr .9fr; gap:16px;}
     @media (max-width:880px){main{grid-template-columns:1fr}}
     .card{background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 55%), var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:var(--pad);}
@@ -45,12 +45,22 @@
     .exo .name{font-weight:700; margin:0 0 3px}
     .exo .meta{color:var(--muted); font-size:13px; margin:0}
     .exo .meta code{font-family:var(--mono); font-size:12px; padding:2px 6px; border-radius:8px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text);}
+    .exo .link{
+      display:inline-flex; align-items:center; gap:6px;
+      margin-top:8px; font-size:13px; font-weight:700;
+      color:var(--accent); text-decoration:none;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(236,72,153,.35);
+      background:rgba(236,72,153,.10);
+      width:max-content;
+    }
+    .exo .link:hover{background:rgba(236,72,153,.16)}
     .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
     button{appearance:none; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); border-radius:12px; padding:10px 12px; font-weight:700; cursor:pointer; transition:transform .06s ease, background .15s ease;}
     button:hover{background:rgba(255,255,255,.07)}
     button:active{transform:translateY(1px)}
     .btn-accent{border-color:rgba(236,72,153,.45); background:rgba(236,72,153,.15); color:var(--accent);}
-    .btn-accent:hover{background:rgba(139,92,246,.22)}
+    .btn-accent:hover{background:rgba(236,72,153,.22)}
     .btn-green{border-color:rgba(244,114,182,.45); background:rgba(244,114,182,.18); color:#831843;}
     .btn-green:hover{background:rgba(34,197,94,.2)}
     .btn-danger{border-color:rgba(239,68,68,.45); background:rgba(239,68,68,.12)}
@@ -66,44 +76,106 @@
 </head>
 <body>
   <header>
-    <h1>Séance Arielle – Haut du corps</h1>
-    <p class="subtitle">Dos (machines) • Épaules (haltères + machine) • Bras • + 1h marche inclinée. Coche au fur et à mesure, lance un minuteur de repos. Pour les charges prends ceux avec lesquels tu peux faire 10. IL y a 4 serie donc il faut que tu monte les charges progressivement de sorte à ce que la dernière tu ne puisse faire que 8 avec. Mais surtout tu dois toujours prendre une charge ou tu peux faire au moins 8 et max 10 si tu arrive a faire 12 c'est que c'est trop leger</p>
+    <h1>Séance Arielle – Bas du corps</h1>
+    <p class="subtitle">
+      On commence par <b>10 min de vélo</b> • Ensuite bas du corps (fessiers + jambes) • + 2 exos triceps <b>sans haltère ni barre</b> • On finit par <b>45 min à 1h de marche inclinée</b>.<br><br>
+      <b>Progression charges :</b> sur les exos en <code>4 séries</code>, reste “propre” sur séries 1–2.
+      <b>À partir de la série 3</b>, monte la charge progressivement pour que <b>la dernière série</b> soit à <b>8 reps</b> (tu ne dois pas pouvoir faire plus).
+      Si la dernière est <b>&lt; 8</b> → trop lourd. Si elle est <b>&gt; 10</b> → trop léger.
+    </p>
   </header>
 
   <main>
     <section class="card" id="workout">
-      <h2>Séance <span class="pill" id="donePill">0 / 9 cochés</span></h2>
+      <h2>Séance <span class="pill" id="donePill">0 / 0 cochés</span></h2>
 
       <div class="section">
-        <div class="section-title"><span class="badge">DOS</span><span style="color:var(--muted); font-size:13px;">3 exercices machines</span></div>
+        <div class="section-title"><span class="badge">WARM-UP</span><span style="color:var(--muted); font-size:13px;">On démarre tranquille</span></div>
         <ul class="list">
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Tirage vertical (Lat Pulldown)</p><p class="meta"><code>4 × 10–12</code> • Repos 60–90s • Tire les coudes vers le bas, poitrine sortie.</p></div></li>
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Rowing assis poulie basse</p><p class="meta"><code>4 × 10–12</code> • Repos 60–90s • Resserre les omoplates à chaque rep.</p></div></li>
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Tractions assistées (ou tirage horizontal machine)</p><p class="meta"><code>3 × 8–10</code> • Repos 60–90s • Mouvement contrôlé, sans élan.</p></div></li>
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Vélo</p>
+              <p class="meta"><code>10 min</code> • Intensité: tu chauffes, tu transpires un peu, mais tu peux parler.</p>
+            </div>
+          </li>
         </ul>
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">ÉPAULES</span><span style="color:var(--muted); font-size:13px;">2 exercices (haltères + machine)</span></div>
+        <div class="section-title"><span class="badge">BAS DU CORPS</span><span style="color:var(--muted); font-size:13px;">4 exercices (focus fessiers + jambes)</span></div>
         <ul class="list">
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Développé épaules haltères</p><p class="meta"><code>4 × 8–10</code> • Repos 60s • Dos droit, évite de trop cambrer.</p></div></li>
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Élévations latérales (machine ou haltères)</p><p class="meta"><code>3 × 12–15</code> • Repos 60s • Lent + contrôle total.</p></div></li>
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Fentes bulgares (un pied sur banc)</p>
+              <p class="meta"><code>4 × 10</code> • Repos 60–90s • Buste gainé, descente contrôlée, pousse via le talon de la jambe avant.</p>
+              <a class="link" href="https://musclewiki.com/exercise/bulgarian-split-squat" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
+
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Squat avec une haltère à deux mains (type goblet) — focus fesses</p>
+              <p class="meta"><code>4 × 10</code> • Repos 60–90s • Descends en gardant le dos neutre, pense “hanches vers l’arrière”, remonte en serrant les fessiers.</p>
+              <a class="link" href="https://musclewiki.com/exercise/dumbbell-goblet-squat" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
+
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Hip thrust</p>
+              <p class="meta"><code>4 × 10</code> • Repos 90s • Pause 1s en haut, menton rentré, bassin en rétroversion (pas de cambrure).</p>
+              <a class="link" href="https://musclewiki.com/exercise/barbell-hip-thrust" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
+
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Curl jambes (machine)</p>
+              <p class="meta"><code>4 × 10</code> • Repos 60–90s • Contrôle total, surtout en descente. Pas d’à-coups.</p>
+              <a class="link" href="https://musclewiki.com/exercise/seated-leg-curl" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
         </ul>
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">BRAS</span><span style="color:var(--muted); font-size:13px;">3 exercices (biceps & triceps)</span></div>
+        <div class="section-title"><span class="badge">TRICEPS</span><span style="color:var(--muted); font-size:13px;">2 exercices sans haltère ni barre</span></div>
         <ul class="list">
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Curl biceps haltères</p><p class="meta"><code>3 × 10–12</code> • Repos 60s • Contrôle, pas d’élan.</p></div></li>
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Extension triceps poulie (pushdown)</p><p class="meta"><code>3 × 12</code> • Repos 60s • Coudes fixes, extension complète.</p></div></li>
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">Extension triceps au-dessus de la tête (haltère)</p><p class="meta"><code>3 × 10–12</code> • Repos 60s • Gaine, descente contrôlée.</p></div></li>
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Dips sur banc (bench dips)</p>
+              <p class="meta"><code>3 × 10–15</code> • Repos 60s • Épaules basses, coudes vers l’arrière, amplitude contrôlée.</p>
+              <a class="link" href="https://musclewiki.com/exercise/bench-dips" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
+
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Pompes diamant (diamond push-ups)</p>
+              <p class="meta"><code>3 × 8–12</code> • Repos 60s • Coudes proches du corps, gainage fort. (Sur genoux si trop dur.)</p>
+              <a class="link" href="https://musclewiki.com/exercise/diamond-push-ups" target="_blank" rel="noopener">Voir l’image</a>
+            </div>
+          </li>
         </ul>
       </div>
 
       <div class="section">
-        <div class="section-title"><span class="badge">CARDIO</span><span style="color:var(--muted); font-size:13px;">Marche inclinée</span></div>
+        <div class="section-title"><span class="badge">CARDIO</span><span style="color:var(--muted); font-size:13px;">Finisher</span></div>
         <ul class="list">
-          <li class="exo"><input type="checkbox" class="chk" /><div><p class="name">1h marche inclinée</p><p class="meta">Inclinaison <code>8–12%</code> • Vitesse <code>4,5–6 km/h</code> • Tu dois pouvoir parler mais être essoufflée.</p></div></li>
+          <li class="exo">
+            <input type="checkbox" class="chk" />
+            <div>
+              <p class="name">Marche inclinée</p>
+              <p class="meta"><code>45 min à 1h</code> • Inclinaison <code>8–12%</code> • Vitesse <code>4,5–6 km/h</code> • Tu dois pouvoir parler mais être essoufflée.</p>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -129,12 +201,12 @@
           <button id="pauseBtn">Pause</button>
           <button class="btn-danger" id="stopBtn">Stop</button>
         </div>
-        <p class="small">Conseil: 60s épaules/bras, 90s sur les gros tirages dos si tu charges.</p>
+        <p class="small">Conseil: 90s sur fentes/squat/hip thrust si tu charges. 60s sur triceps/curl jambes.</p>
       </div>
     </aside>
   </main>
 
-  <footer>Version simple & efficace.</footer>
+  <footer>Version simple & efficace. Astuce clavier: <span class="kbd">R</span> = reset.</footer>
 
   <script>
     const chks = Array.from(document.querySelectorAll('.chk'));
